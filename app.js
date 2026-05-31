@@ -199,6 +199,84 @@ const updateWorkloadOutput = (range) => {
   output.textContent = `${range.value}h`;
 };
 
+const closeJargonTooltips = (exceptTooltip = null) => {
+  let didCloseTooltip = false;
+
+  document.querySelectorAll("[data-jargon-tooltip]").forEach((tooltip) => {
+    if (tooltip === exceptTooltip || tooltip.hidden) {
+      return;
+    }
+
+    tooltip.hidden = true;
+    const trigger = document.querySelector(`[aria-controls="${tooltip.id}"]`);
+
+    if (trigger) {
+      trigger.removeAttribute("data-tooltip-pinned");
+      trigger.setAttribute("aria-expanded", "false");
+    }
+
+    didCloseTooltip = true;
+  });
+
+  return didCloseTooltip;
+};
+
+const setJargonTooltipOpen = (trigger, isOpen) => {
+  const tooltipId = trigger.getAttribute("aria-controls");
+  const tooltip = tooltipId ? document.querySelector(`#${tooltipId}`) : null;
+
+  if (!tooltip) {
+    return;
+  }
+
+  if (isOpen) {
+    closeJargonTooltips(tooltip);
+  }
+
+  tooltip.hidden = !isOpen;
+  trigger.setAttribute("aria-expanded", String(isOpen));
+};
+
+const setupJargonTooltips = () => {
+  document.querySelectorAll("[data-jargon-wrap]").forEach((wrapper) => {
+    const trigger = wrapper.querySelector("[data-jargon-trigger]");
+    const closeButton = wrapper.querySelector("[data-action='close-jargon-tooltip']");
+
+    wrapper.addEventListener("mouseenter", () => setJargonTooltipOpen(trigger, true));
+    wrapper.addEventListener("mouseleave", () => {
+      if (!trigger.hasAttribute("data-tooltip-pinned")) {
+        setJargonTooltipOpen(trigger, false);
+      }
+    });
+    wrapper.addEventListener("focusout", (event) => {
+      if (!wrapper.contains(event.relatedTarget) && !trigger.hasAttribute("data-tooltip-pinned")) {
+        setJargonTooltipOpen(trigger, false);
+      }
+    });
+
+    trigger.addEventListener("focus", () => setJargonTooltipOpen(trigger, true));
+    trigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const shouldPinTooltip = !trigger.hasAttribute("data-tooltip-pinned");
+      trigger.toggleAttribute("data-tooltip-pinned", shouldPinTooltip);
+      setJargonTooltipOpen(trigger, shouldPinTooltip);
+    });
+
+    closeButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      trigger.focus();
+      trigger.removeAttribute("data-tooltip-pinned");
+      setJargonTooltipOpen(trigger, false);
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest("[data-jargon-wrap]")) {
+      closeJargonTooltips();
+    }
+  });
+};
+
 const submitReview = (event) => {
   event.preventDefault();
 
@@ -292,9 +370,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
   workloadRange.addEventListener("input", () => updateWorkloadOutput(workloadRange));
   updateWorkloadOutput(workloadRange);
+  setupJargonTooltips();
 
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Escape") {
+      return;
+    }
+
+    if (closeJargonTooltips()) {
       return;
     }
 

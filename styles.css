@@ -784,6 +784,21 @@ h1 span {
   color: #2d61df;
 }
 
+.recommendation-wide {
+  grid-column: 1 / -1;
+}
+
+.recommendation b {
+  display: inline;
+  color: inherit;
+}
+
+.callout-preparation {
+  border: 1px solid #d5b7f5;
+  background: linear-gradient(180deg, #fdfaff, #f8f0ff);
+  color: #5b279f;
+}
+
 .quote-card {
   padding: 24px 24px 22px;
 }
@@ -803,6 +818,108 @@ h1 span {
   font-size: 1.08rem;
   font-weight: 650;
   line-height: 1.42;
+}
+
+.jargon-wrap {
+  position: relative;
+  display: inline-flex;
+  vertical-align: baseline;
+}
+
+.jargon-term {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 3px;
+  border: 0;
+  border-bottom: 1px dashed #7440c5;
+  border-radius: 3px;
+  background: #f1e6ff;
+  color: #5b249f;
+  cursor: help;
+  font-weight: 850;
+  line-height: inherit;
+}
+
+.jargon-term:hover,
+.jargon-term:focus-visible {
+  background: #e7d4ff;
+  outline: 2px solid rgba(116, 64, 197, 0.22);
+  outline-offset: 2px;
+}
+
+.jargon-term svg,
+.jargon-term i {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  stroke-width: 2.8;
+}
+
+.jargon-tooltip {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  z-index: 8;
+  display: grid;
+  width: min(330px, calc(100vw - 56px));
+  gap: 9px;
+  padding: 15px 16px;
+  border: 1px solid #d7d9e1;
+  border-radius: 7px;
+  background: white;
+  box-shadow: 0 16px 36px rgba(31, 28, 48, 0.2);
+  color: #353846;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.45;
+  transform: translateX(-50%);
+}
+
+.jargon-tooltip::after {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid #d7d9e1;
+  border-bottom: 1px solid #d7d9e1;
+  background: white;
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.jargon-tooltip-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.jargon-tooltip-heading button {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #6a7080;
+  cursor: pointer;
+}
+
+.jargon-tooltip-heading button:hover,
+.jargon-tooltip-heading button:focus-visible {
+  background: #f0f1f5;
+  outline: 0;
+}
+
+.jargon-tooltip-heading svg,
+.jargon-tooltip-heading i {
+  width: 17px;
+  height: 17px;
 }
 
 .quote-card footer {
@@ -864,6 +981,23 @@ h1 span {
   margin-right: 20px;
   color: #9aa1af;
   content: "\2022";
+}
+
+.jargon-footnote {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #8d95a5;
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.jargon-footnote svg,
+.jargon-footnote i {
+  width: 16px;
+  height: 16px;
 }
 
 @media (max-width: 900px) {
@@ -1531,6 +1665,35 @@ textarea {
   font-size: 1.16rem;
   font-weight: 600;
   line-height: 1.55;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 18px;
+  border: 1px solid #cdd3dc;
+  border-radius: 8px;
+  background: #fbfcfe;
+  color: #2b3140;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.text-input::placeholder {
+  color: #848b98;
+}
+
+.text-input:focus,
+textarea:focus {
+  border-color: #78aef3;
+  box-shadow: 0 0 0 3px rgba(95, 159, 242, 0.18);
+  outline: 0;
+}
+
+.field-help {
+  color: #929aa9;
+  font-size: 0.92rem;
+  font-weight: 650;
 }
 
 textarea::placeholder {
