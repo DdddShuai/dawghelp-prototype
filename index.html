@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INFO 360 Design Methods | UW Course Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell" aria-label="Course detail page">
+      <section class="course-hero panel" aria-labelledby="course-title">
+        <div class="breadcrumb" aria-label="Course breadcrumb">
+          <a href="#">INFO 360</a>
+          <span>/Design Methods</span>
+        </div>
+
+        <div class="hero-layout">
+          <div>
+            <h1 id="course-title">INFO 360 Design Methods <span>(4)</span></h1>
+            <p class="course-meta">Informatics major elective with peer-backed workload, grading, and requirement fit.</p>
+          </div>
+
+          <div class="term-selector" aria-label="Selected registration term">
+            <span>Spring 2026</span>
+          </div>
+        </div>
+
+        <div class="hero-actions" aria-label="Course actions">
+          <button class="button button-primary" type="button" data-action="plan">
+            <i data-lucide="plus" aria-hidden="true"></i>
+            <span>Add to Plan</span>
+          </button>
+          <button class="button button-secondary" type="button" data-action="bookmark">
+            <i data-lucide="bookmark" aria-hidden="true"></i>
+            <span>Add Bookmark</span>
+          </button>
+        </div>
+
+        <p class="enrollment-note">
+          <i data-lucide="bookmark-check" aria-hidden="true"></i>
+          <span>You are enrolled in Section A (14821) for <a href="#">Spring 2026</a></span>
+        </p>
+      </section>
+
+      <section class="panel overview" aria-labelledby="overview-title">
+        <header class="panel-heading">
+          <h2 id="overview-title">Course Overview</h2>
+        </header>
+
+        <div class="overview-list">
+          <div class="overview-row description-row">
+            <h3>Course Description</h3>
+            <p>
+              Introduces design paradigms and methods for envisioning information systems that meet the needs of people, organizations, and society.
+              Topics include design thinking, creativity, and the sketching, prototyping, evaluating, and specifying of information experiences.
+              Engages questions of design justice, examining who is and is not served by design.
+              <a href="#">Find more insights for this course on CourseWolf.</a>
+            </p>
+          </div>
+
+          <div class="overview-row">
+            <h3>Course Prerequisites</h3>
+            <p>None</p>
+          </div>
+
+          <div class="overview-row">
+            <h3>Quarters</h3>
+            <p class="inline-items">
+              <span>Scheduled for</span>
+              <span class="tag tag-blue">AU 26</span>
+              <span class="tag tag-green">SP 27</span>
+              <span>Check with the department or your advisor for more information about this course.</span>
+            </p>
+          </div>
+
+          <div class="overview-row">
+            <h3>Gen Ed May Pro</h3>
+            <p class="inline-items">
+              <span class="tag tag-yellow">VLPA</span>
+              <span class="tag tag-pink">Diversity</span>
+              <span class="tag tag-purple">Social Sciences &amp; A&amp;H Arts and Humanities</span>
+            </p>
+          </div>
+
+          <div class="overview-row">
+            <h3>Add this May Pro</h3>
+            <p>INFORMATICS, Seattle Campus</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <button class="insights-fab" type="button" data-action="open-insights" aria-haspopup="dialog">
+      <span class="fab-icon">
+        <i data-lucide="messages-square" aria-hidden="true"></i>
+      </span>
+      <span>
+        <b data-fab-title>Peer Insights</b>
+        <small data-fab-subtitle>type to open</small>
+      </span>
+    </button>
+
+    <section class="floating-overlay" id="insightsWindow" aria-labelledby="floating-insights-title" aria-modal="true" role="dialog" hidden>
+      <div class="floating-window" role="document">
+        <header class="floating-window-bar">
+          <div>
+            <i data-lucide="lock" aria-hidden="true" data-floating-status-icon></i>
+            <h2 id="floating-insights-title">Peer Insights (Crowdsourced)</h2>
+            <span class="community-chip">Community Data</span>
+          </div>
+          <button class="window-close" type="button" data-action="close-insights" aria-label="Close peer insights window">
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </header>
+
+        <div class="locked-gate" data-locked-view>
+          <div class="blurred-insights" aria-hidden="true">
+            <div class="ghost-row ghost-wide"></div>
+            <div class="ghost-grid">
+              <div class="ghost-card">
+                <span></span>
+                <b></b>
+                <i></i>
+              </div>
+              <div class="ghost-card">
+                <span></span>
+                <b></b>
+                <i></i>
+              </div>
+              <div class="ghost-card">
+                <span></span>
+                <b></b>
+                <i></i>
+              </div>
+              <div class="ghost-card">
+                <span></span>
+                <b></b>
+                <i></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="unlock-card">
+            <button class="unlock-button" type="button" data-action="start-review">
+              <i data-lucide="lock-keyhole" aria-hidden="true"></i>
+              <span>Unlock Insights: Review a past course to see INFO 360 data.</span>
+            </button>
+            <p>Contribute a course review to access crowdsourced insights from your peers.</p>
+          </div>
+        </div>
+
+        <section class="panel peer-insights floating-peer-panel" aria-labelledby="insights-title" data-unlocked-view hidden>
+          <header class="insights-heading">
+            <div>
+              <i data-lucide="users-round" aria-hidden="true"></i>
+              <h2 id="insights-title">Peer Insights (Crowdsourced)</h2>
+            </div>
+            <p>
+              <i data-lucide="badge-check" aria-hidden="true"></i>
+              <span>23 verified reviews</span>
+            </p>
+          </header>
+
+          <div class="insights-content">
+            <article class="insight-card course-format" aria-labelledby="format-title">
+              <h3 id="format-title">Course Format</h3>
+              <div class="stacked-track" aria-label="Project based 85 percent, exam based 15 percent">
+                <div class="track-fill project-fill">
+                  <span>Project-Based <b>85%</b></span>
+                </div>
+                <div class="track-fill exam-fill">
+                  <span>15%</span>
+                </div>
+              </div>
+              <div class="legend">
+                <span><b class="dot dot-purple"></b>Project-Based</span>
+                <span><b class="dot dot-lavender"></b>Exam-Based</span>
+              </div>
+              <p>Most students describe the course as portfolio/project heavy.</p>
+            </article>
+
+            <article class="insight-card ratings-card" aria-labelledby="ratings-title">
+              <h3 id="ratings-title">Ratings (out of 5.0)</h3>
+
+              <div class="rating-row">
+                <div class="rating-label">
+                  <span>Overall Quality</span>
+                  <b>4.3</b>
+                </div>
+                <div class="meter" aria-label="Overall quality 4.3 out of 5">
+                  <span class="meter-fill purple-meter" style="width: 86%"></span>
+                </div>
+              </div>
+
+              <div class="rating-row">
+                <div class="rating-label">
+                  <span>Workload Manageability</span>
+                  <b>3.1</b>
+                </div>
+                <div class="meter" aria-label="Workload manageability 3.1 out of 5">
+                  <span class="meter-fill teal-meter" style="width: 62%"></span>
+                </div>
+              </div>
+
+              <div class="rating-row">
+                <div class="rating-label">
+                  <span>Would Recommend</span>
+                  <b>4.6</b>
+                </div>
+                <div class="meter" aria-label="Would recommend 4.6 out of 5">
+                  <span class="meter-fill green-meter" style="width: 92%"></span>
+                </div>
+              </div>
+            </article>
+
+            <article class="insight-card workload-card" aria-labelledby="workload-title">
+              <div class="card-title-row">
+                <h3 id="workload-title">Workload Snapshot</h3>
+                <button class="icon-button" type="button" aria-label="Average workload details" data-tooltip="Average workload from peer submissions">
+                  <i data-lucide="info" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="workload-copy">
+                <span>Average weekly workload</span>
+                <b>10-12 hrs</b>
+              </div>
+              <div class="scale" aria-label="Average weekly workload around 11.5 hours">
+                <div class="scale-fill"></div>
+                <div class="scale-pin"></div>
+                <span class="scale-mark mark-0">0h</span>
+                <span class="scale-mark mark-5">5h</span>
+                <span class="scale-mark mark-10">10h</span>
+                <span class="scale-mark mark-15">15h</span>
+                <span class="scale-mark mark-20">20h+</span>
+              </div>
+              <div class="pill-row">
+                <span class="pill pill-purple">3-4 assignments/week</span>
+                <span class="pill pill-teal">Weekly studio work</span>
+              </div>
+            </article>
+
+            <article class="insight-card grading-card" aria-labelledby="grading-title">
+              <div class="card-title-row">
+                <h3 id="grading-title">Grading Breakdown</h3>
+                <button class="icon-button" type="button" aria-label="Grading breakdown details" data-tooltip="Estimated from recent anonymous reviews">
+                  <i data-lucide="info" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="grading-bar" aria-label="Projects 45 percent, participation 20 percent, assignments 25 percent, exams 10 percent">
+                <span class="grade-projects"></span>
+                <span class="grade-participation"></span>
+                <span class="grade-assignments"></span>
+                <span class="grade-exams"></span>
+              </div>
+              <div class="legend grade-legend">
+                <span><b class="dot dot-purple"></b>Projects: 45%</span>
+                <span><b class="dot dot-teal"></b>Participation: 20%</span>
+                <span><b class="dot dot-green"></b>Assignments: 25%</span>
+                <span><b class="dot dot-gold"></b>Exams: 10%</span>
+              </div>
+              <p>Breakdown reflects 23 peer submissions.</p>
+            </article>
+
+            <div class="recommendation callout-success">
+              <i data-lucide="check" aria-hidden="true"></i>
+              <span>Attendance: Highly Recommended (Not Mandatory)</span>
+            </div>
+
+            <div class="recommendation callout-info">
+              <i data-lucide="book-marked" aria-hidden="true"></i>
+              <span>Requirement Fit: VLPA + A&amp;H, not a major prerequisite</span>
+            </div>
+
+            <article class="quote-card" aria-label="Anonymous peer review from Autumn 2025">
+              <span class="quote-mark">&ldquo;</span>
+              <p>
+                Genuinely one of the most hands-on courses in the INFO major. Every week you're sketching,
+                user-testing, or iterating on a prototype. The lectures give you just enough theory to make
+                your work feel grounded. Budget at least 10-12 hours a week if you want to do the projects justice.
+              </p>
+              <footer>
+                <span class="avatar avatar-purple">SR</span>
+                <div>
+                  <b>Anonymous Peer</b>
+                  <span>Autumn 2025 &bull; Workload: 11h/wk &bull; Project-heavy</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="quote-card" aria-label="Anonymous peer review from Spring 2025">
+              <span class="quote-mark">&ldquo;</span>
+              <p>
+                Don't let 'design' fool you into thinking this is a light course. The rubrics are detailed and Chen
+                holds you to them. That said, the feedback from peers and instructors is some of the most useful I've
+                gotten at UW. Coming to class matters because discussions shape the direction of your projects.
+              </p>
+              <footer>
+                <span class="avatar avatar-teal">MK</span>
+                <div>
+                  <b>Anonymous Peer</b>
+                  <span>Spring 2025 &bull; Workload: 12h/wk &bull; Grading: projects</span>
+                </div>
+              </footer>
+            </article>
+          </div>
+
+          <footer class="data-footnote">
+            <span>Data sourced from 23 peer submissions</span>
+            <span>Last updated May 2026</span>
+            <span>Reviews are anonymous</span>
+          </footer>
+        </section>
+      </div>
+    </section>
+
+    <section class="review-overlay" id="reviewModal" aria-labelledby="review-title" aria-modal="true" role="dialog" hidden>
+      <form class="review-dialog" data-review-form>
+        <header class="review-header">
+          <button class="window-close review-close" type="button" data-action="close-review" aria-label="Close review form">
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+          <p>Peer Insights &bull; Crowdsourced</p>
+          <h2 id="review-title">Submit a Course Review</h2>
+          <span>Your review unlocks INFO 360 peer data for your peers.</span>
+        </header>
+
+        <div class="review-body">
+          <div class="field-group course-picker">
+            <label id="course-picker-label">Select Past Course</label>
+            <button class="course-select" type="button" data-action="toggle-course-list" aria-labelledby="course-picker-label selected-course" aria-expanded="false">
+              <span id="selected-course">Choose a course you've completed...</span>
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <ul class="course-menu" data-course-menu hidden>
+              <li><button type="button" data-course="">Choose a course you've completed...</button></li>
+              <li><button type="button" data-course="INFO 200">INFO 200 &middot; Intellectual Foundations of Informatics</button></li>
+              <li><button type="button" data-course="INFO 201">INFO 201 &middot; Foundational Skills for Data Science</button></li>
+              <li><button type="button" data-course="INFO 270">INFO 270 &middot; Data Reasoning in a Digital World</button></li>
+              <li><button type="button" data-course="INFO 300">INFO 300 &middot; Research Methods</button></li>
+              <li><button type="button" data-course="INFO 310">INFO 310 &middot; Information Assurance and Cybersecurity</button></li>
+              <li><button type="button" data-course="INFO 330">INFO 330 &middot; Databases and Data Modeling</button></li>
+              <li><button type="button" data-course="INFO 350">INFO 350 &middot; Information Ethics and Policy</button></li>
+              <li><button type="button" data-course="INFO 380">INFO 380 &middot; Information Systems Analysis &amp; Management</button></li>
+              <li><button type="button" data-course="INFO 430">INFO 430 &middot; Database Design for Data Science</button></li>
+              <li><button type="button" data-course="INFO 441">INFO 441 &middot; Server-Side Development</button></li>
+              <li><button type="button" data-course="INFO 448">INFO 448 &middot; Mobile Development: Android</button></li>
+              <li><button type="button" data-course="INFO 474">INFO 474 &middot; Interactive Information Visualization</button></li>
+            </ul>
+            <input type="hidden" name="course" data-course-input required>
+          </div>
+
+          <div class="field-group">
+            <span class="field-label">Course Format</span>
+            <div class="format-options" data-format-options>
+              <label class="format-card is-selected">
+                <input type="radio" name="format" value="Exam-Heavy" checked>
+                <span class="radio-dot"></span>
+                <span>Exam-Heavy</span>
+              </label>
+              <label class="format-card">
+                <input type="radio" name="format" value="Project-Heavy">
+                <span class="radio-dot"></span>
+                <span>Project-Heavy</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field-group workload-field">
+            <div class="field-topline">
+              <label for="workloadRange">Workload (hours per week)</label>
+              <output for="workloadRange" data-workload-output>10h</output>
+            </div>
+            <input id="workloadRange" class="workload-range" type="range" min="1" max="40" value="10" name="workload">
+            <div class="range-labels" aria-hidden="true">
+              <span>1h</span>
+              <span>10h</span>
+              <span>20h</span>
+              <span>30h</span>
+              <span>40h</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="experienceText">The "True" Experience</label>
+            <textarea id="experienceText" name="experience" rows="6" placeholder="Be candid -- what did the syllabus not tell you? Workload surprises, grading style, best strategies..." required></textarea>
+            <p class="review-note">Reviews are anonymous and moderated for community guidelines.</p>
+          </div>
+        </div>
+
+        <footer class="review-footer">
+          <button class="button button-primary submit-review" type="submit">
+            <i data-lucide="send" aria-hidden="true"></i>
+            <span>Submit Review</span>
+          </button>
+        </footer>
+      </form>
+    </section>
+  </body>
+</html>
